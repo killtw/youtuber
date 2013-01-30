@@ -43,7 +43,7 @@ function qs_parse(qs) {
 }
 
 function get_video(id) {
-  var INFO_URL = 'http://www.youtube.com/get_video_info?&video_id=';
+  var INFO_URL = 'http://www.youtube.com/get_video_info?el=detailpage&video_id=';
   $.get(INFO_URL + id, function(data) {
     var info = qs_parse(data);
     var url = info.url_encoded_fmt_stream_map.replace(/%3B\+/g, '&').replace(/%3D/g, '=').split(',').map(function(format) {
